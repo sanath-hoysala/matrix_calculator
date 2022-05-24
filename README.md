@@ -10,3 +10,11 @@ The project is "Matrix Calculator"
 	2) Row length of the 2D array 
 	3) Column length of the 2D array
 ## Implimentation
+	We will be creating user-defined functions to implement 
+	1) Addition
+	2) Subtraction, 
+	3) Multiplication
+	4) Determinent
+	5) Scalar Multiplication
+	6) Vector Multiplication 
+	
