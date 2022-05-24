@@ -9,3 +9,4 @@ The project is "Matrix Calculator"
 	1) The 2D array itself 
 	2) Row length of the 2D array 
 	3) Column length of the 2D array
+## Implimentation
