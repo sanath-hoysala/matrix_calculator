@@ -1,17 +1,17 @@
 #include<stdio.h> 
-void add_matrix()           // To add the matrix
+void add_matrix(a)           // To add the matrix
 {
 
 }
-void sub_matrix()
+void sub_matrix(a)
 {
 
 }
-void mul_matrix()
+void mul_matrix(a)
 {
 
 }
-void div_matrix()
+void div_matrix(a)
 {
 
 }
