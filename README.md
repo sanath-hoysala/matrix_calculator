@@ -11,8 +11,11 @@ We will be using structures to store information about a 2D array
 3) Column length of the 2D array
 ## Implimentation
 Creating seperate functions for 
-1) Adding an array into the array of structures
-2) Adding the array
-3) Subtracting the array 
-4) Inverting te array 
-5) Multiplying the array 
+1) Inputing an array into the array of structures
+2) Addition of arrays
+3) Subtraction the arrays 
+4) Inverting the arrays 
+5) Dividing the arrays
+6) Multiplication of arrays 
+7) Scalar Multiplication on an array
+8) Determinent of the array 
