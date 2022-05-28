@@ -54,6 +54,7 @@ int main()
 {
 	struct array a[100]; 
 	initial(n);
+
 		
 
 
