@@ -1,17 +1,17 @@
 #include<stdio.h> 
-void add_matrix(a)           // To add the matrix
+void add_matrix(struct a[i] )           // To add the matrix
 {
 
 }
-void sub_matrix(a)
+void sub_matrix(struct a[i])
 {
 
 }
-void mul_matrix(a)
+void mul_matrix(struct a[i])
 {
 
 }
-void div_matrix(a)
+void div_matrix(struct a[i])
 {
 
 }
@@ -26,7 +26,16 @@ void initial(n)
 }
 void get_array(struct array a[i])
 {
-	scanf("Enter the size of row and column : %d %d", &s[i].r, &a[i].c);
+	scanf("Enter the size of row and column : %d %d", &a[i].r, &a[i].c);
+	for(int c=0; c<a[i].c ; c++)
+	{
+		for(int r=0 ; r<a[i].r ; r++)
+		{
+			printf("Enter the value for a[%d][%d] : ",r,c);
+			scanf(&a[i].a[r][c]);
+		}
+	}
+
 }
 
 struct array                // Data related to an array 
@@ -39,7 +48,7 @@ int n,i;                    // Global variable
 
 void get_array()
 {
-	scanf("Enter the number of rows and colums :", &array.r , &array.c );
+	scanf("Enter the number of rows and colums :", &a[i].r , &a[i].c );
 
 int main()
 {
