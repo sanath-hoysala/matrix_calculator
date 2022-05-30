@@ -1,21 +1,32 @@
 #include<stdio.h> 
-void add_matrix(struct a[i] )           // To add the matrix
+int n,i;                                      // Global variable
+struct array                                  // Data related to an array 
+{
+	int r;
+	int c;
+	int ar[100][100];
+}a[100];                            
+void add_matrix(struct array a[i] )           // To add the matrices
 {
 
 }
-void sub_matrix(struct a[i])
+void sub_matrix(struct array a[i])            // To subtract matrices
 {
 
 }
-void mul_matrix(struct a[i])
+void mul_matrix(struct array a[i])            // To multiply matrices
 {
 
 }
-void div_matrix(struct a[i])
+void div_matrix(struct array a[i])            // To divide matrices
 {
 
 }
-void initial(n)
+void invert(struct array a[i])
+{
+
+}
+void initial(n)                                // To initialize 
 {
 	printf("Select one of the following options :- \n
 	1) Input a matrix \n
@@ -23,6 +34,16 @@ void initial(n)
 	scanf("%d",&n);
 	if(n==1)
 		get_array();
+	else if(n==2)
+	{
+
+	}
+	else	
+		{
+			printf("Invalit input");
+			initial(n);
+		}
+		
 }
 void get_array(struct array a[i])
 {
@@ -32,24 +53,11 @@ void get_array(struct array a[i])
 		for(int r=0 ; r<a[i].r ; r++)
 		{
 			printf("Enter the value for a[%d][%d] : ",r,c);
-			scanf(&a[i].a[r][c]);
+			scanf(&a[i].ar[r][c]);
 		}
 	}
 
 }
-
-struct array                // Data related to an array 
-{
-	int r;
-	int c;
-	int ar[100][100];
-}a[100];
-int n,i;                    // Global variable 
-
-void get_array()
-{
-	scanf("Enter the number of rows and colums :", &a[i].r , &a[i].c );
-
 int main()
 {
 	struct array a[100]; 
