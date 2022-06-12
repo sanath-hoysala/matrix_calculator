@@ -18,14 +18,6 @@ int main()
 {
 	int o=0,k=1;
 	int i=0,n;
-	printf("You can do the following operations on the matrices");
-	printf("1. Addition" );
-	printf("2. Subtraction ");
-	printf("3. Multiplication");
-	printf("4. Division ");
-	printf("5. Transpose ");
-	printf("6. Scalar multiplication");
-	printf("7. Exit\n");
 	while(k!=0)
 	{
 		if(o=0)
@@ -35,13 +27,13 @@ int main()
 		}
 		else
 		{
-				printf("You can do the following operations on the matrices");
-				printf("1. Addition" );
-				printf("2. Subtraction ");
-				printf("3. Multiplication");
-				printf("4. Division ");
-				printf("5. Transpose ");
-				printf("6. Scalar multiplication");
+				printf("You can do the following operations on the matrices \n");
+				printf("1. Addition\n" );
+				printf("2. Subtraction\n ");
+				printf("3. Multiplication\n");
+				printf("4. Division \n");
+				printf("5. Transpose \n");
+				printf("6. Scalar multiplication\n");
 				printf("7. Exit\n");
 				scanf("%d\n",&n);
 			switch(n)
@@ -104,6 +96,20 @@ void get_array(struct array a[],int n,int i)
 			}
 			
 		}
+	else if (n==3)
+		{
+		for(int c=0; c<a[i].c ; c++)
+		{
+			for(int c=0; c<a[i].c ; c++)
+			{
+				for(int r=0 ; r<a[i].r ; r++)
+				{
+					printf("Enter the value for a[%d][%d] : ",r,c);
+					scanf("%d",&a[i].ar[r][c]);
+				}
+			}
+		}
+`		}
 	else
 	{
 		printf("Invalid input");
@@ -112,6 +118,7 @@ void get_array(struct array a[],int n,int i)
 }
 void add_matrix(struct array a[],struct array s[],int i )           // To add the matrices
 {
+	get_array(a,1,0);
 	if(a[i].r==a[i+1].r && a[i].c==a[i+1].c)
 	{
 		for(int c=0; c<a[i].c ; c++)
@@ -130,6 +137,7 @@ void add_matrix(struct array a[],struct array s[],int i )           // To add th
 }
 void sub_matrix(struct array a[],struct array s[],int i)            // To subtract matrices
 {
+	get_array(a,1,0);
 	if(a[i].r==a[i+1].r && a[i].c==a[i+1].c)
 	{
 		for(int c=0; c<a[i].c ; c++)
@@ -147,6 +155,7 @@ void sub_matrix(struct array a[],struct array s[],int i)            // To subtra
 }
 void mul_matrix(struct array a[],struct array s[],int i )            // To multiply matrices
 {
+	get_array(a,1,0);
 	int p,q,r;
 	for(int p=0; p<a[i].c ;p++)
 	{
@@ -174,6 +183,7 @@ void scalar(struct array a[],int n,int i)
 {
 	printf("Enter the scalar number: \n");
 	scanf("%d\n",&n);
+	get_array(a,3,1);
 	for(int c=0; c<a[i].c ; c++)
 		{
 			for(int r=0 ; r<a[i].r ; r++)
