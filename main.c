@@ -1,5 +1,4 @@
-#include<stdio.h> 
-int n,i=0;                                    // Global variable
+#include<stdio.h>                                     // Global variable
 struct array                                  // Data related to an array 
 {
 	int r;
@@ -7,47 +6,62 @@ struct array                                  // Data related to an array
 	int ar[100][100];
 }a[100],s[1];  
 // Declaring all the functions 
-void add_matrix(struct array a[i]);  
-void sub_matrix(struct array a[i]);
-void mul_matrix(struct array a[i]);
-void div_matrix(struct array a[i]);
-void invert(struct array a[i]);
-void get_array(int n);
-void initial(int n); 
-// -----------------------------------------------------------------------------------------------------------------------               
+void add_matrix(struct array a[],struct array s[],int i );  
+void sub_matrix(struct array a[],struct array s[],int i );
+void mul_matrix(struct array a[],struct array s[],int i );
+void div_matrix(struct array a[],struct array s[],int i );
+void invert(struct array a[],struct array s[],int i);
+void scalar(struct array a[],int n,int i);
+void get_array(struct array a[],int n,int i);
+// ------------------------------------------------------------------------------------------------------------------------               
 int main()
 {
-	struct array a[100]; 
-	int o=0;
-	initial(1);
-	while(True):
+	int o=0,k=1;
+	int i=0,n;
+	printf("You can do the following operations on the matrices");
+	printf("1. Addition" );
+	printf("2. Subtraction ");
+	printf("3. Multiplication");
+	printf("4. Division ");
+	printf("5. Transpose ");
+	printf("6. Scalar multiplication");
+	printf("7. Exit\n");
+	while(k!=0)
 	{
 		if(o=0)
-			get_array(1);
+		{
+			get_array(a,1,i);
 			o++;
+		}
 		else
 		{
-			printf("You can do the following operations on the matrices --\n
-			1. Addition \n
-			2. Subtraction \n
-			3. Multiplication \n
-			4. Division \n
-			5. Transpose \n
-			6. Scalar multiplication\n");
-			scanf(&n);
+				printf("You can do the following operations on the matrices");
+				printf("1. Addition" );
+				printf("2. Subtraction ");
+				printf("3. Multiplication");
+				printf("4. Division ");
+				printf("5. Transpose ");
+				printf("6. Scalar multiplication");
+				printf("7. Exit\n");
+				scanf("%d\n",&n);
 			switch(n)
 			{
-				case 1 : add_matrix();
+				case 1 : add_matrix(a,s,i);
 						break;
-				case 2 : sub_matrix();
+				case 2 : sub_matrix(a,s,i);
 						break;
-				case 3 : mul_matrix();
+				case 3 : mul_matrix(a,s,i);
 						break;
-				case 4 : div_matrix();
+				case 4 : div_matrix(a,s,i);
 						break;
-				case 5 : invert();
+				case 5 : invert(a,s,i);
 						break;
-				default : exit(0);
+				case 6 : scalar(a,n,i);
+						break;
+				case 7 : k=1;
+						break;
+				default : printf("Invalid input");
+						 break;
 			}
 		}
 	}
@@ -56,18 +70,7 @@ int main()
 
 
 // ---------------------------------------------------------------------------------------------------------------------
-void initial(int n)                                     // To initialize 
-{
-	printf("You can do the following operations on the matrices\n
-	1. Addition \n
-	2. Subtraction \n
-	3. Multiplication \n
-	4. Division \n
-	5. Transpose \n
-	6. Scalar multiplication\n");
-	
-}
-void get_array(int n)
+void get_array(struct array a[],int n,int i)
 {
 	if(n==1)
 	{
@@ -77,16 +80,16 @@ void get_array(int n)
 			for(int r=0 ; r<a[i].r ; r++)
 			{
 				printf("Enter the value for a[%d][%d] : ",r,c);
-				scanf(&a[i].ar[r][c]);
+				scanf("%d",&a[i].ar[r][c]);
 			}
 		}
-		scanf("Enter the size of row and column of second matrix: %d %d", &a[i].r, &a[i].c);  // Getting second matrix
+		scanf("Enter the size of row and column of second matrix: %d %d", &a[i+1].r, &a[i+1].c);  // Getting second matrix
 		for(int c=0; c<a[i+1].c ; c++)
 		{
 			for(int r=0 ; r<a[i+1].r ; r++)
 			{
 				printf("Enter the value for a[%d][%d] : ",r,c);
-				scanf(&a[i+1].ar[r][c]);
+				scanf("%d",&a[i+1].ar[r][c]);
 			}
 		}
 	}
@@ -104,11 +107,10 @@ void get_array(int n)
 	else
 	{
 		printf("Invalid input");
-		initial(1);
 	}
 
 }
-void add_matrix(struct array a[i] )           // To add the matrices
+void add_matrix(struct array a[],struct array s[],int i )           // To add the matrices
 {
 	if(a[i].r==a[i+1].r && a[i].c==a[i+1].c)
 	{
@@ -126,7 +128,7 @@ void add_matrix(struct array a[i] )           // To add the matrices
 	}
 
 }
-void sub_matrix(struct array a[i])            // To subtract matrices
+void sub_matrix(struct array a[],struct array s[],int i)            // To subtract matrices
 {
 	if(a[i].r==a[i+1].r && a[i].c==a[i+1].c)
 	{
@@ -143,7 +145,7 @@ void sub_matrix(struct array a[i])            // To subtract matrices
 		printf("Both matrix should be of same order\n");
 	}
 }
-void mul_matrix(struct array a[i])            // To multiply matrices
+void mul_matrix(struct array a[],struct array s[],int i )            // To multiply matrices
 {
 	int p,q,r;
 	for(int p=0; p<a[i].c ;p++)
@@ -160,15 +162,26 @@ void mul_matrix(struct array a[i])            // To multiply matrices
 	}
 
 }
-void div_matrix(struct array a[i])            // To divide matrices
+void div_matrix(struct array a[],struct array s[],int i )            // To divide matrices
 {
 
 }
-void invert(struct array a[i])
+void invert(struct array a[], struct array s[],int i)
 {
 
 }
-
+void scalar(struct array a[],int n,int i)
+{
+	printf("Enter the scalar number: \n");
+	scanf("%d\n",&n);
+	for(int c=0; c<a[i].c ; c++)
+		{
+			for(int r=0 ; r<a[i].r ; r++)
+			{
+				a[i].ar[r][c]=n*a[i].ar[r][c];
+			}
+		}
+}
 
 
 
