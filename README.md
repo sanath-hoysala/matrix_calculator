@@ -19,3 +19,5 @@ Creating seperate functions for
 6) Multiplication of arrays 
 7) Scalar Multiplication on an array
 8) Determinent of the array 
+
+while loop is used to track the option entry
